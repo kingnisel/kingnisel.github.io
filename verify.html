@@ -1,0 +1,7 @@
+<!DOCTYPE html>
+<html><body><pre id="o">loading...</pre><script>
+fetch('/.well-known/appspecific/com.tesla.3p.public-key.pem')
+  .then(function(r){ document.getElementById('o').textContent = 'HTTP status: ' + r.status + '\nContent-Type: ' + r.headers.get('content-type') + '\n\n'; return r.text(); })
+  .then(function(t){ document.getElementById('o').textContent += t; })
+  .catch(function(e){ document.getElementById('o').textContent = 'FETCH ERROR: ' + e; });
+</script></body></html>
